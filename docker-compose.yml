@@ -1,0 +1,13 @@
+version: '2'
+services:
+  apache:
+    image:  httpd:latest
+    volumes:
+      - ./unit-class-generate-and-import/:/usr/local/apache2/htdocs/
+    ports:
+      - "80:80"
+    links:
+      - php
+
+  php:
+    image: php:latest
